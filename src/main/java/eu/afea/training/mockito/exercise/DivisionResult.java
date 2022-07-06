@@ -12,6 +12,14 @@ public class DivisionResult {
 
 
 
+	public DivisionResult() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
 	public DivisionResult(Integer div1, Integer div2, Integer ris) {
 		super();
 		this.div1 = div1;
