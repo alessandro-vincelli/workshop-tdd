@@ -7,7 +7,7 @@ public class Divider {
 		try {
 		return new DividerResult(divided , divider ,divided/divider );
 		}
-		catch(Exception e){
+		catch(ArithmeticException e){
 			throw new ImpossibleCalculationException();
 		}
 	}
