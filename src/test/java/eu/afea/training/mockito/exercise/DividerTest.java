@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class DividerTest {
@@ -24,15 +25,15 @@ public class DividerTest {
 	assertEquals(Integer.valueOf(10), result.getDividend());
 	assertEquals(Integer.valueOf(2), result.getDivisor());
 }*/
-	/*@Test
-	public void DivisionZero() throws ImpossibleCalculatorException {
+	@Ignore
+	public void DivisionZeroOG() throws ImpossibleCalculatorException {
 		Integer dividend = 10;
 		Integer divisor = 0;
 		DivisionResult result = divider.dividers(dividend, divisor);
 		assertEquals(Integer.valueOf(5), result.getResult());
 		assertEquals(Integer.valueOf(10), result.getDividend());
 		assertEquals(Integer.valueOf(0), result.getDivisor());
-		}*/
+		}
 	
 	@Test
 	public void DivisionZero() throws ImpossibleCalculatorException {
