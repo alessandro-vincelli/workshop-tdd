@@ -4,7 +4,7 @@ public class Diveder {
 	
 	
 	public static Division_result divides(int divided1, int diveded2) {
-		Division_result d = new Division_result(20, 2, 20/2);
+		Division_result d = new Division_result(divided1, diveded2, divided1/diveded2);
 		return d;
 	}
 }
