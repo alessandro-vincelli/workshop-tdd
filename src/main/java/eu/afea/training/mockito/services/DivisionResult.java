@@ -4,46 +4,32 @@
  */
 package eu.afea.training.mockito.services;
 
-
-
 public class DivisionResult {
 
 	private static final Object DivisionResult = null;
 	private Integer result;
 	private Integer dividend;
 	private Integer divisor;
-	
 
 	public DivisionResult(Integer result, Integer dividend, Integer divisor) {
-		
-	this.dividend = dividend;
-	this.divisor = divisor;
-	this.result = result;
-	
-	setRisultato(dividend, divisor, dividend/divisor); 
-	
-	return;
-	
-	
+
+		this.dividend = dividend;
+		this.divisor = divisor;
+		this.result = result;
+
+		setresult(dividend, divisor, dividend / divisor);
+
+		return;
 
 	}
-	
 
+	private void setresult(Integer dividend, Integer divisor, Integer result) {
 
-
-	private void setRisultato(Integer dividend2, Integer divisor2, int i) {
-		// TODO Auto-generated method stub
-		
 	}
 
+	private void setresult() {
 
-
-	private void setRisultato() {
-		// TODO Auto-generated method stub
-		
 	}
-
-
 
 	public Integer getDivident() {
 		return dividend;
@@ -61,25 +47,18 @@ public class DivisionResult {
 		this.divisor = divisor;
 	}
 
-	public void setRisultato(Integer risultato) {
+	public void setresult(Integer rresult) {
 		result = result;
 	}
 
-
-
 	public eu.afea.training.mockito.services.DivisionResult divides(Integer dividend, Integer divisor2) {
-		
+
 		return null;
 	}
-
-
 
 	public Object getResult() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
-	
-    
 }
-	
