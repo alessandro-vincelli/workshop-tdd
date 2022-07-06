@@ -18,12 +18,32 @@ public class DividerTest {
 	public void setupDivides() {
 		Integer dividend = 10;
 		Integer divisor = 2;
-		Integer result = 5;
+	
 
 		DividerResult result = divider.divides(dividend, divisor);
 		assertEquals(Integer.valueOf(5), result.getResult());
 		assertEquals(Integer.valueOf(10), result.getDivident());
 		assertEquals(Integer.valueOf(2), result.getDivisor());
 	}
+	@Test
+	public void testDivides_divisionByZero() {
+		Integer dividend = 10;
+		Integer divisor = 0;
+		
+
+		DividerResult result = divider.divides(dividend, divisor);
+		assertEquals(Integer.valueOf(5), result.getResult());
+		assertEquals(Integer.valueOf(10), result.getDivident());
+		assertEquals(Integer.valueOf(2), result.getDivisor());
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }
