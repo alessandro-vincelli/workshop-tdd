@@ -10,6 +10,7 @@ public class Division_result {
 	public Division_result() {}
 	
 	public Division_result(int d1, int d2, int r){
+		super();
 		div1 = d1;
 		div2 = d2;
 		result = r;
