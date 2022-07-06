@@ -1,6 +1,6 @@
 package eu.afea.training.mockito.exercise;
 
-public class Divisione {
+public class Divisione{
 
 	public Divisione() {
 		// TODO Auto-generated constructor stub
@@ -17,16 +17,16 @@ public class Divisione {
 		int val1 = D1.getDiv1();
 		int val2 = D1.getDiv2();
 	      try {
-	         //this block will contain statements that may raise exceptions
-	         System.out.println("Try Block:: Start");
+	         
+	         System.out.println("Try Block -->  Start");
 	        
 	         ris = val1/val2;
 	         System.out.println(ris);
-	         System.out.println("Try Block:: End");
+	         System.out.println("Try Block -->  End");
 	      }
 	      catch (ArithmeticException e) { 
-	         //handler for ArithmeticException
-	         System.out.println("ArithmeticException :: divisione per 0!!");
+	         
+	         System.out.println("ArithmeticException ---->  divisione per 0!!");
 	      }
 	      System.out.println("Fuori dal try-catch.");
 	   }
