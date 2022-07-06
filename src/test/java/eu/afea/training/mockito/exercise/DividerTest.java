@@ -1,5 +1,14 @@
 package eu.afea.training.mockito.exercise;
 
-public class DividerTest {
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 
+public class DividerTest {
+	
+	@Test
+	public void testDiv(){
+		assertEquals("20/2 != 10", 10, Diveder.div(20, 2));
+	}
+	
 }
