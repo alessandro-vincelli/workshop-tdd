@@ -1,6 +1,7 @@
 package eu.afea.training.mockito.exercise;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -27,7 +28,7 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(2), ris.getDiv2());
 		
 	}
-	/*
+	@Ignore("solo per Studiare")
 	@Test
 	public void Divisione_per_zero() throws ImpossibleClalculationException
 	{
@@ -40,9 +41,11 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(0), ris.getDiv2()); 
 		
 		}
-	*/
+		
+	
+	
 	@Test(expected = ImpossibleClalculationException.class)
-	public void Divisione_per_zero() throws ImpossibleClalculationException {
+	public void Divisione_per_zero2() throws ImpossibleClalculationException {
 		Integer div1 = 10;
 		Integer div2 = 0;
 		DivisionResult ris = divider.Div(div1,div2);
@@ -51,33 +54,32 @@ public class DividerTest {
 	 //int result = calculator.squareRoot(-1);
 	}
 	// Test is skipped:
+	
 
-
-	/*
+	
 	@Test
-	public void testSquareRoot_negativeArgument() {
+	public void Divisione_per_zero3() throws ImpossibleClalculationException {
 	 try {
 		 	Integer div1 = 10;
 			Integer div2 = 0;
-		 DivisionResult ris = divider.Div(div1,div2);
-		 assertEquals(Integer.valueOf(10), ris.getDiv1());
-		 assertEquals(Integer.valueOf(0), ris.getDiv2()); 
+			DivisionResult ris = divider.Div(div1,div2);
+		 //assertEquals(Integer.valueOf(10), ris.getDiv1());
+		// assertEquals(Integer.valueOf(0), ris.getDiv2()); 
 	 //int result = calculator.squareRoot(-1);
-	 //fail(“Should throw IllegalArgumentException”);
+		 fail("Should throw ImpossibleClalculationException");
 	 } 
-	 catch(IllegalArgumentException e) {
+	 catch(ImpossibleClalculationException e) {
 	 // Additional assertions...
+	      
+
 		 
 	 }
-	 */
+	 
 	}
-		/*
-		DivisionResult R = new DivisionResult(10,30,89);
-		R.setDiv1(10);
-		R.setDiv2(30);
-		R.setRis(89);
-		assertEquals("1/1 != 1 ", 1, this.divider.Div(R.getDiv2(),R.getDiv1()));
-		*/
+}
+	 
+		
+	
 	
 	
 
