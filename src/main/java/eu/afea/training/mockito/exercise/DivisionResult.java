@@ -68,5 +68,15 @@ public class DivisionResult {
 	public void setRis(Integer ris) {
 		this.ris = ris;
 	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "DivisionResult [div1=" + div1 + ", div2=" + div2 + ", ris=" + ris + ", toString()=" + super.toString()
+				+ "]";
+	}
+	
 	
 }
