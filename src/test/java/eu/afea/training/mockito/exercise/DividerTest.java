@@ -3,6 +3,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -36,9 +37,8 @@ public class DividerTest {
 	
 	
 	
-	
-	/* 
-	 * @Test
+	 @Ignore("solo per studiare")
+	 @Test
 	public void testDivisione_per_Zero() throws ImpossibleCalculationException { //
 		Integer dividendo = 5;
 		Integer divisore = 0;
@@ -49,22 +49,22 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(0), risultato.getDivisore());
 	
 	}
-	*/
 	
 	
-	/* 
+	
+	 @Ignore("solo per studiare")
 	@Test(expected = ImpossibleCalculationException.class)
-	public void testDivisione_per_Zero() throws ImpossibleCalculationException { //
+	public void testDivisione_per_Zero1() throws ImpossibleCalculationException { //
 		Integer dividendo = 5;
 		Integer divisore = 0;
 
 		DivisionResult risultato = divider.divides(dividendo, divisore); //
 	}
-*/
+
 	
 	
 	@Test
-	public void testDivisione_per_Zero()  { //
+	public void testDivisione_per_Zero2()  { //
 		try
 		{
 		Integer dividendo = 5;
