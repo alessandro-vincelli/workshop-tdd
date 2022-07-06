@@ -6,9 +6,9 @@ public class Divider {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int Div(int i, int j) {
+	public  DivisionResult Div(Integer div1, Integer div2) {
 		// TODO Auto-generated method stub
-		return i/j;
+		return DivisionResult;
 	}
 
 }

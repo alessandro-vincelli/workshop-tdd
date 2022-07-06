@@ -17,7 +17,12 @@ public class DividerTest {
 	@Test
 	public void testdIV()
 	{
+		DivisionResult R = new DivisionResult(10,30,89);
+		R.setDiv1(10);
+		R.setDiv2(30);
+		R.setRis(89);
 		assertEquals("1/1 != 1 ", 1, this.divider.Div(1,1));
 	}
+	
 
 }
