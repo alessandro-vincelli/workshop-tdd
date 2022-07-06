@@ -14,15 +14,40 @@ public class DividerTest {
 	}
 
 	@Test
-	public void testDivides() {
+	public void testDivides() throws ImpossibleCalculationException {
 		Integer dividend = 10;
 		Integer divisor = 2;
-		
+
 		DivisionResult result = divider.divides(dividend, divisor);
 		assertEquals(Integer.valueOf(5), result.getResult());
 		assertEquals(Integer.valueOf(10), result.getDividend());
 		assertEquals(Integer.valueOf(2), result.getDivisor());
-	
+	}
+
+	@Test
+	public void testCalcutation() throws ImpossibleCalculationException {
+		Integer dividend = 5;
+		Integer divisor = 0;
+
+		DivisionResult result;
+		try {
+			result = divider.divides(dividend, divisor);
+			fail();
+		} catch (eu.afea.training.mockito.exercise.ImpossibleCalculationException e) {
+
+			e.printStackTrace();
+		}
 
 	}
+
+  
+	@Test(expected = ImpossibleCalculationException.class)
+    public void testCalcutation2() throws ImpossibleCalculationException {
+	Integer dividend = 5;
+	Integer divisor = 0;
+
+	DivisionResult result = divider.divides(dividend, divisor);
+
+}
+
 }
