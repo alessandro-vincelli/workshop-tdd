@@ -21,7 +21,7 @@ public class DividerTest {
 		R.setDiv1(10);
 		R.setDiv2(30);
 		R.setRis(89);
-		assertEquals("1/1 != 1 ", 1, this.divider.Div(1,1));
+		assertEquals("1/1 != 1 ", 1, this.divider.Div(R.getDiv2(),R.getDiv1()));
 	}
 	
 

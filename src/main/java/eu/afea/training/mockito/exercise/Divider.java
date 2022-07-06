@@ -8,7 +8,8 @@ public class Divider {
 
 	public  DivisionResult Div(Integer div1, Integer div2) {
 		// TODO Auto-generated method stub
-		return DivisionResult;
+		DivisionResult D = new DivisionResult(div1/div2);
+		return D;
 	}
 
 }
