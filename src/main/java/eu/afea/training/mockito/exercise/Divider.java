@@ -18,4 +18,10 @@ public DivisionResult Div (Integer dividend,Integer divisor)
 
 }
 
+
+public AritmeticException Div (Integer dividend,Integer divisor)
+{
+return 
+
+}
 }

@@ -16,7 +16,7 @@ public class DividerTest {
 	}
 
 	@Test
-	public void testDivides() {
+	public void testDivides() throws ImpossibleCalcultationException {
 
 		Integer dividend = 10;
 		Integer divisor = 2;
@@ -27,4 +27,13 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(2), result.getDivisor());
 
 	}
+
+	@Test
+	public void testdivision_By_zero() throws ImpossibleCalcultationException {
+		Integer dividend = 10;
+		Integer divisor = 0;
+		DivisionResult result = divides.Div(dividend, divisor);
+
+	}
+
 }
