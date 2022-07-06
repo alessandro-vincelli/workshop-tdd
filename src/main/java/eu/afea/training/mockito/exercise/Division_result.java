@@ -7,13 +7,14 @@ public class Division_result {
 	private int div1, div2, result;
 	
 	//Constructor
-	public Division_result() {}
+	public Division_result() {
+	}
 	
-	public Division_result(int d1, int d2, int r){
+	public Division_result(int d1, int d2){
 		super();
 		div1 = d1;
 		div2 = d2;
-		result = r;
+		result = d1/d2;
 	}
 
 	//Setter & Getter
