@@ -2,8 +2,11 @@ package eu.afea.training.mockito.exercise;
 
 public class Division_result {
 	
+	
+	//Properties
 	private int div1, div2, result;
 	
+	//Constructor
 	public Division_result() {}
 	
 	public Division_result(int d1, int d2, int r){
@@ -12,6 +15,7 @@ public class Division_result {
 		result = r;
 	}
 
+	//Setter & Getter
 	public int getDiv1() {
 		return div1;
 	}
