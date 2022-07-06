@@ -6,11 +6,22 @@ public class Divider {
 		// TODO Auto-generated constructor stub
 	}
 
-	public  DivisionResult Div(Integer div1, Integer div2) {
+	public  DivisionResult Div(Integer div1, Integer div2) throws ImpossibleClalculationException {
 		// TODO Auto-generated method stub
 		//DivisionResult D = new DivisionResult();
-		
-		return new DivisionResult(div1, div2, div1/div2);
+		try {
+	        
+	        System.out.println("Try Block -->  Start");
+	       
+	        
+	        return new DivisionResult(div1, div2, div1/div2);
+	        
+	     }
+	     catch (Exception e) { 
+	        throw new ImpossibleClalculationException();
+	    
+	     }
+		//return new DivisionResult(div1, div2, div1/div2);
 	}
 
 

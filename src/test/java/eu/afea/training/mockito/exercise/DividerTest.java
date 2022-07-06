@@ -15,15 +15,27 @@ public class DividerTest {
 		
 	}
 	@Test
-	public void testdIV()
+	public void testdIV() throws ImpossibleClalculationException
 	{
 		Integer div1 = 10;
-		Integer div2 = 2;
+		Integer div2 = 2; 
 		//Integer ris = 5;
 		DivisionResult ris = divider.Div(div1,div2);
 		assertEquals(Integer.valueOf(5), ris.getRis());
 		assertEquals(Integer.valueOf(10), ris.getDiv1());
 		assertEquals(Integer.valueOf(2), ris.getDiv2());
+		
+	}
+	@Test
+	public void Divisione_per_zero() throws ImpossibleClalculationException
+	{
+		Integer div1 = 10;
+		Integer div2 = 0;
+		//Integer ris = 5;
+		DivisionResult ris = divider.Div(div1,div2);
+		//assertEquals(Integer.valueOf(5), ris.getRis());
+		assertEquals(Integer.valueOf(10), ris.getDiv1());
+		assertEquals(Integer.valueOf(0), ris.getDiv2()); 
 		
 	}
 		/*
