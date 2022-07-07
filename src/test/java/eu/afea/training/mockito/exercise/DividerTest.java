@@ -15,8 +15,8 @@ public class DividerTest {
 		divider = new Divider();
 	}
 	
-	/*@Test
-	public void testDivides() {      //metodo per la divisione
+	@Test
+	public void testDivides() throws ImpossibleCalculatorException {      //metodo per la divisione
 	
 	Integer dividend = 10;
 	Integer divisor = 2;
@@ -24,7 +24,7 @@ public class DividerTest {
 	assertEquals(Integer.valueOf(5), result.getResult());
 	assertEquals(Integer.valueOf(10), result.getDividend());
 	assertEquals(Integer.valueOf(2), result.getDivisor());
-}*/
+}
 	@Ignore
 	public void DivisionZeroOG() throws ImpossibleCalculatorException {
 		Integer dividend = 10;
@@ -35,7 +35,7 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(0), result.getDivisor());
 		}
 	
-	/*@Test
+	@Test
 	public void divisionzero() throws ImpossibleCalculatorException {
 		Integer dividend = 10;
 		Integer divisor = 0;
@@ -43,17 +43,16 @@ public class DividerTest {
 		 DivisionResult result = divider.dividers(dividend, divisor);
 		 fail("Should throw ImpossibileCalculatorException");
 	 } 
-	 catch(ArithmeticException e) {
-		 throw new ImpossibleCalculatorException();
+	 catch(ImpossibleCalculatorException e) {
 	 }
-	}*/
+	}
 	
-	/*@Test(expected = ImpossibleCalculatorException.class)
+	@Test(expected = ImpossibleCalculatorException.class)
 	public void DivisionZero2() throws ImpossibleCalculatorException {
 		Integer dividend = 10;
 		Integer divisor = 0;
 		DivisionResult result = divider.dividers(dividend, divisor);
-	}*/
+	}
 	
 
 	
