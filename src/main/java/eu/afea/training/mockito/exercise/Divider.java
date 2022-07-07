@@ -4,10 +4,15 @@ public class Divider {
 	
 	public DividerResult divides(Integer divided , Integer divider ) throws ImpossibleCalculationException {
 		
-		try {
-		return new DividerResult(divided , divider ,divided/divider );
+		if(divider!=0){
+			double result=Math.ceil((double)divided/(double)divider);
+			result =Math.ceil(result);
+			DividerResult divisionResult = new DividerResult(divided , divider ,(int)result );
+			
+		return divisionResult;
+				
 		}
-		catch(ArithmeticException e){
+		else{
 			throw new ImpossibleCalculationException();
 		}
 	}
