@@ -73,8 +73,15 @@ public class DividerTest {
 		}
 		
 		
-		
-		
+		@Test
+		public void test3by2() throws ImpossibleCalcultationException {
+			Integer dividend = 3;
+			Integer divisor = 2;
+			DivisionResult result = divides.Div(dividend, divisor);
+			assertEquals(Integer.valueOf(3),result.getDividend());
+			assertEquals(Integer.valueOf(2),result.getDivisor());
+			
+		}
 		
 		
 	}
