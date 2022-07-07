@@ -10,6 +10,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.Mockito;
 import org.mockito.Spy;
 import static org.mockito.Mockito.spy;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -21,15 +22,17 @@ public class DividerTest3 {
 
 
 	private Divider3 divider3; 
-
+private Logger log;   // serve per il   mockito es.3  .4
 
 
 
 	@Before 
 	public void setupTest() { 
-		divider3 = spy(  new Divider3());  // mockito es.2  .4 . adesso,fatto questo, devo solo aggiungere il verify
-	}                                      // SENZA LI MOCK  SPY sarebbe:   divider3 = new Divider3();
-
+		 log = Mockito.mock(Logger.class);  //   mockito es.3  .4
+		
+		divider3 = spy(  new Divider3(log));  // mockito es.2  .4 . adesso,fatto questo, devo solo aggiungere il verify /il LOG tra paresntesi è solo per il mokito es 3 .4
+		                                   // SENZA LI MOCK  SPY sarebbe:   divider3 = new Divider3();
+}
 
 
 
@@ -85,10 +88,10 @@ public class DividerTest3 {
 			fail("ImpossibleCalculationException");
 		}
 		catch (Exception e)
-		{
-			verify(divider3).log(anyString());      // mockito es.2  .5   se non legge anyString, importalo staticamente)
-		}	                                  // per verificarlo, commento il metodo log nell else della classe Divider3
-	}
+		{                                         // normalmente ,cioè es 2 .5, sarebbe "verify(divider3)", il verify(log) pè solo per il mockito es 3. punto finale 
+			verify(log).log(anyString());      // mockito es.2  .5   se non legge anyString, importalo staticamente)
+		}	                                        // per verificarlo, commento il metodo log nell else della classe Divider3
+	}       
 
 
 

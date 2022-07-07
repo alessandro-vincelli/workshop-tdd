@@ -9,6 +9,18 @@ public class Divider3 {  //  2.   modifico il metodo "Divides" aggiungendo le ri
 
 	
 	
+	
+	private Logger logger; //  mockito es.3  .3
+	public Divider3(Logger logger) {
+	super();
+	this.logger = logger;
+}
+
+
+
+
+
+
 	private	static List<DivisionResult2> resultLista = new ArrayList<>();  //  5.  (eser. 4) creo una lista statica
 	                       // list è una interfaccia, quindi va implementata e non inizializzata
                            
@@ -44,8 +56,13 @@ public class Divider3 {  //  2.   modifico il metodo "Divides" aggiungendo le ri
 			resultLista.add(divisionResult2);  
 			
 			
-		log("Division of " +  dividendo + " by ZERO" );// mockito es.2  .2
+			// log("Division of " +  dividendo + " by ZERO");// mockito es.2  .2 
 			
+			
+			
+		logger.log("Division of " +  dividendo + " by ZERO");//   mockito es.3  .4 modifico il metodo log aggiungendo il logger
+			
+		
 			throw new ImpossibleCalculationException(); 
 			
 			
@@ -55,14 +72,14 @@ public class Divider3 {  //  2.   modifico il metodo "Divides" aggiungendo le ri
 	
 	
 	
+	// mockito es.2  .1   (è commentato solo per l esercizio 3 del mock)
 	
-	
-	
-	public void log(String message)// mockito es.2  .1
+/*	
+	public void log(String message)
 	{
 	System.out.println(message);
 	}
-	
+	*/
 
 
 
