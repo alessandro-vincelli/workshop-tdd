@@ -79,6 +79,8 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(2), result.getResult());
 		assertEquals(Integer.valueOf(3), result.getDividend());
 		assertEquals(Integer.valueOf(2), result.getDivisor());
+		assertEquals(1, divider.getResultlist().size());
+		assertEquals(Integer.valueOf(2), divider.getResultlist().get(0).getResult());
 		
 	}
 	}

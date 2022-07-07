@@ -46,6 +46,12 @@ public class DivisionResult {
 	public DivisionResult() {
 		
 	}
+
+
+	public void addall(double result) {
+		
+		
+	}
 	
 	
 
