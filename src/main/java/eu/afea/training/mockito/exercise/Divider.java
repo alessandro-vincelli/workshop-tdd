@@ -5,6 +5,11 @@ import java.util.*;
 public class Divider {
 	
 	private static List<Division_result> list = new ArrayList<>();
+	private I_Logger l;
+	
+	public Divider(I_Logger l) {
+		this.l = l;
+	}
 
 	public Division_result divides(int divided1, int diveded2) throws ImpossibleCalculationException{
 		
@@ -24,6 +29,7 @@ public class Divider {
 		catch(ArithmeticException e) {
 			d.setResult(null);
 			list.add(d);
+			l.log("Division of "+divided1+" by zero");
 			throw new ImpossibleCalculationException();
 		}
 			

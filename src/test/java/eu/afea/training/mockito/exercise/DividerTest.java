@@ -1,18 +1,22 @@
 package eu.afea.training.mockito.exercise;
 
 import org.junit.*;
+import org.mockito.Mockito;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 public class DividerTest {
 	
 	private Divider divider;
+	private Logger l;
+	//private I_Logger l;
 	
 	@Before
 	public void setUp() {
-		divider = new Divider();
-		Divider.getList().clear();	
+		l = Mockito.mock(Logger.class);
+		//l = new Logger();
+		divider = new Divider(l);
 	}
 	
 	@Test
@@ -49,15 +53,18 @@ public class DividerTest {
 		n2 = 0;
 		
 		Division_result d;
+		
 		try {
 			d = divider.divides(n1, n2);
-			assertEquals(d.getResult(), n1/n2);
+			
+			assertEquals(d.getResult(), null);
 			assertEquals(d.getDiv1(), n1);
 			assertEquals(d.getDiv2(), n2);
-			assertEquals(1, Divider.getList().size());
+			
 			fail("Should throw ImpossibleCalculationException");
 		} catch (ImpossibleCalculationException e) {
-			//e.printStackTrace();
+			//I check if log() print somethings
+			verify(l).log(anyString());
 		}
 	}
 	
