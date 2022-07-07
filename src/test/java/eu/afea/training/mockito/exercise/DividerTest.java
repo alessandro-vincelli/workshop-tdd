@@ -12,7 +12,7 @@ import eu.afea.training.mockito.services.DivisionResult;
 public class DividerTest {
 
 	public DividerTest() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	private Divider divider;
@@ -71,6 +71,16 @@ public class DividerTest {
 
 	}
 
+	@Test
+	public void testDividesbug() throws ImpossibleCalculationException {
+		Integer dividend = 3;
+		Integer divisor = 2;
+		DivisionResult result = divider.divides(dividend, divisor);
+		assertEquals(Integer.valueOf(2), result.getResult());
+		assertEquals(Integer.valueOf(3), result.getDividend());
+		assertEquals(Integer.valueOf(2), result.getDivisor());
+
+	}
 }
 
 
