@@ -1,6 +1,6 @@
 package eu.afea.training.mockito.exercise;
 
-//Using extend to personalize Aritmetich error
+//Using for extend Exception class
 public class ImpossibleCalculationException extends Exception {
 	
 }

@@ -11,7 +11,7 @@ public class Divider {
 			d.setResult(divided1/diveded2);
 			return d;
 		}
-		catch(Exception e) {
+		catch(ArithmeticException e) {
 			throw new ImpossibleCalculationException();
 		}
 			

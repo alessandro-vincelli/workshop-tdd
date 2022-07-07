@@ -15,6 +15,19 @@ public class DividerTest {
 	}
 	
 	@Test
+	public void testDivides_roundup() throws ImpossibleCalculationException{
+		int n1, n2;
+		n1 = 3;
+		n2 = 2;
+		
+		Division_result d =  divider.divides(n1, n2);
+		assertEquals(2, d.getResult());
+		assertEquals(n1, d.getDiv1());
+		assertEquals(n2, d.getDiv2());
+	}
+	
+	
+	@Test
 	public void testdivides() throws ImpossibleCalculationException{
 		int n1, n2;
 		n1 = 20;
