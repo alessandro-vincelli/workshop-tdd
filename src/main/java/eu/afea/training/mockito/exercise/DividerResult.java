@@ -1,9 +1,14 @@
 package eu.afea.training.mockito.exercise;
+import java.util.ArrayList;
+
+
 
 public class DividerResult {
 	private Integer divident;
 	private Integer divisor;
 	private Integer result;
+	
+	
 
 	public DividerResult(Integer divident, Integer divisor, Integer result) {
 		super();
@@ -11,7 +16,6 @@ public class DividerResult {
 		this.divisor = divisor;
 		this.result = result;
 	}
-	
 	
 	
 
