@@ -3,6 +3,7 @@ package eu.afea.training.mockito.exercise;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -44,8 +45,8 @@ public class DividerTest3 {
 
 
 
-
-	@Test  
+@Test
+	@Ignore 
 	public void testDivido_per_zero() throws ImpossibleCalculationException {  
 		Integer dividendo = 10;
 		Integer divisore = 0;
@@ -118,6 +119,7 @@ public class DividerTest3 {
 		// questo perchè si aspettano una eccezione, che adesso non viene più catturata 
 
 
+		//  4.  per rimediare al problema descritto, faccio un if
 	}
 
 
