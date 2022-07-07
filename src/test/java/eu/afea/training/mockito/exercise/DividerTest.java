@@ -14,7 +14,7 @@ public class DividerTest {
 	
 	public void setup() {
 		this.divider = new Divider();   //per istanziare e non ripetere per ogni testdIV
-		
+		divider = new Divider();
 	}
 	@Test
 	public void testdIV() throws ImpossibleClalculationException
@@ -85,12 +85,29 @@ public class DividerTest {
 			assertEquals(Integer.valueOf(3), ris.getDiv1());
 			assertEquals(Integer.valueOf(2), ris.getDiv2()); 
 			assertEquals(Integer.valueOf(2), ris.getRis());
+		//	assertEquals(1, Divider.getListaDiv()), ris.getRis());
 			
 		
 	}
 	
+	@Test()
+	public void Divisione_per_Zero4() throws ImpossibleClalculationException
+	{
+		Integer div1 = 10;
+		Integer div2 = 2; 
+		//Integer ris = 5;
+		try {
+		DivisionResult ris = divider.Div(div1,div2);
+		fail();
+		}
+		catch(ImpossibleClalculationException e)
+		{
+			
+			
+			
+		}
 	
-	
+}
 }
 	 
 		

@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Divider {
 	private static List<DivisionResult> ListaDiv = new ArrayList<>();
+	
 	public Divider() {
 		// TODO Auto-generated constructor stub
 	}
@@ -39,7 +40,10 @@ public class Divider {
 	     }
 		//return new DivisionResult(div1, div2, div1/div2);
 	}
-
-
+	
+	public static List<DivisionResult> getListaDiv()
+	{
+		return ListaDiv;
+	}
 
 }
