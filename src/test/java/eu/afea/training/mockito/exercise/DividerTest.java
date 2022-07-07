@@ -53,7 +53,7 @@ public class DividerTest {
 			assertEquals(d.getDiv2(), n2);
 			fail("Should throw ImpossibleCalculationException");
 		} catch (ImpossibleCalculationException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 	
