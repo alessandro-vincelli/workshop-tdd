@@ -3,6 +3,7 @@ package eu.afea.training.mockito.exercise;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -14,7 +15,10 @@ public class DividerTest {
 	public void setUp() {               //set del testing
 		divider = new Divider();
 	}
-	
+	@After
+	public void setClear() {
+		Divider.clearResultList();
+	}
 	@Test
 	public void testDivides() throws ImpossibleCalculatorException {      //metodo per la divisione
 	
@@ -33,6 +37,8 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(5), result.getResult());
 		assertEquals(Integer.valueOf(10), result.getDividend());
 		assertEquals(Integer.valueOf(0), result.getDivisor());
+		/*assertEquals(1, divider.getResultList().size());
+		assertEquals(Integer.valueOf(2), divider.getResultList().get(0).getResult());*/
 		}
 	
 	@Test
@@ -64,6 +70,8 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(2), result.getResult());
 		assertEquals(Integer.valueOf(3), result.getDividend());
 		assertEquals(Integer.valueOf(2), result.getDivisor());
+		/*assertEquals(1, divider.getResultList().size());
+		assertEquals(Integer.valueOf(2), divider.getResultList().get(0).getResult());*/
 	}
 	
 	
