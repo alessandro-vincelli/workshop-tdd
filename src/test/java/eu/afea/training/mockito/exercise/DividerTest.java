@@ -2,16 +2,23 @@ package eu.afea.training.mockito.exercise;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 
 import org.junit.*;
+import org.mockito.Mockito;
 
 public class DividerTest {
 
 	private Divider divider;
+	private Logger log;
 
 	@Before
 	public void setupTest() {
-		divider = new Divider();
+		
+		log = Mockito.mock(Logger.class);
+		divider = spy(new Divider(log));
 
 	}
 
@@ -64,6 +71,34 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(2), result.getDivisor());
 	}
 		
+		@Test
+		public void test_spy() {
+			
+			Integer dividend = 10;
+			Integer divisor = 0;
+
+			Divider dspy=spy (divider);
+			try {
+				
+				DividerResult result = dspy.divides(dividend, divisor);
+				
+				
+				//result = divider.divides(dividend, divisor);
+				fail("dovrebbe lanciare un'ecezzione e non la fatto");
+
+			} catch (ImpossibleCalculationException e) {
+				
+			
+				verify(log).log(anyString());
+				
+				e.printStackTrace();
+			}
+			
+			
+			
+			
+			
+		}
 		
 		
 		

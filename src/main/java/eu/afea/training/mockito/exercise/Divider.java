@@ -4,9 +4,18 @@ import java.util.ArrayList;
 
 public class Divider {
 	
+	private Logger logger;
+	
+	
+	public Divider(Logger logger) {
+		super();
+		this.logger = logger;
+	}
+
+
 	public DividerResult divides(Integer divided , Integer divider ) throws ImpossibleCalculationException {
 		
-		private static ArrayList<DividerResult> resultList= new ArrayList<>();
+		
 		if(divider!=0){
 			
 			
@@ -14,15 +23,15 @@ public class Divider {
 			result =Math.ceil(result);
 			DividerResult divisionResult = new DividerResult(divided , divider ,(int)result );
 			
-			resultList.add(divisionResult);
+		
 			
 		return divisionResult;
 				
 		}
 		else{
 			DividerResult divisionResult = new DividerResult(divided , divider ,null );
-			resultList.add(divisionResult);
 			
+			logger.log("division of " + divided +"by zero");
 			
 			throw new ImpossibleCalculationException();
 		}
