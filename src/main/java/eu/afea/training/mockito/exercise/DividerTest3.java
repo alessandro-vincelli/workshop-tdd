@@ -45,8 +45,8 @@ public class DividerTest3 {
 
 
 
-@Test
-	@Ignore 
+	@Test
+	@Ignore // solo nel caso uno volesse tutto pulito, senza l eccezione personalizzata
 	public void testDivido_per_zero() throws ImpossibleCalculationException {  
 		Integer dividendo = 10;
 		Integer divisore = 0;
@@ -98,9 +98,9 @@ public class DividerTest3 {
 
 	//  1.  ( es. 3)  dentro al test lascio tutto uuale, tranne i valori del dividendo e del divisoere, che diventanto 3 e 2. 
 	//  poi modifico il metodo con il RETURN, ovvero (in questo caso) Divide3
-	
-	
-	
+
+
+
 	@Test
 	public void test3diviso2() throws ImpossibleCalculationException {  
 		Integer dividendo = 3;
@@ -114,7 +114,12 @@ public class DividerTest3 {
 		assertEquals(Integer.valueOf(3), risultato.getDividendo());  
 		assertEquals(Integer.valueOf(2), risultato.getDivisore()); 
 
-		
+		//  9. aggiungo il controllo della mia lista
+		assertEquals(1, divider3.getLista().size());
+		assertEquals(Integer.valueOf(2), divider3.getLista().get(0).getRisultato());
+
+
+
 		//  3.  adesso lo eseguo e funziona. TUTTAVIA adesso saranno alcuni dei test precedenti a non funzionare
 		// questo perchè si aspettano una eccezione, che adesso non viene più catturata 
 
