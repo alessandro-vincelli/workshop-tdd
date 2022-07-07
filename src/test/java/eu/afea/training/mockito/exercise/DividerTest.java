@@ -2,6 +2,7 @@ package eu.afea.training.mockito.exercise;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -13,6 +14,11 @@ public class DividerTest {
 	@Before
 	public void setupTest() {
 		divider = new divider();
+	}
+
+	@After
+	public void tearDown() {
+		divider.clearResultList();
 
 	}
 
@@ -50,13 +56,13 @@ public class DividerTest {
 			Integer divisor = 0;
 
 			DivisionResult result = divider.divides(dividend, divisor);
-
+			fail();
 			assertEquals(Integer.valueOf(5), result.getResult());
 			assertEquals(Integer.valueOf(dividend), result.getDividend());
 			assertEquals(Integer.valueOf(divisor), result.getDivisor());
 			fail("Should throw IllegalArgumentException");
 		} catch (ImpossibleCalculationException e) {
-
+			
 		}
 		
 	}
@@ -84,6 +90,8 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(2), result.getResult());
 		assertEquals(Integer.valueOf(dividend), result.getDividend());
 		assertEquals(Integer.valueOf(divisor), result.getDivisor());
-
+		assertEquals(1,divider.getResultList().size());
+		assertEquals(Integer.valueOf(2),divider.getResultList().get(0).getResult());
+		
 	}
 }

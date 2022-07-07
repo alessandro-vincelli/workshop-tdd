@@ -1,27 +1,62 @@
 package eu.afea.training.mockito.exercise;
 
+import java.util.*;
+
 public class divider {
 
-	public DivisionResult divides(Integer dividend, Integer divisor) throws ImpossibleCalculationException {
+	private static List<DivisionResult> resultList = new ArrayList<>();
+	
+	
+
+	public divider() {
+		super();
 		
-		if(divisor != 0) {
-		  double result = Math.ceil((double) dividend / (double) divisor);
-		  result = Math.ceil(result);		
-		 
-				
-		DivisionResult divisionResult = new DivisionResult(dividend, divisor,(int)result);
-				return divisionResult;
+	}
+
+
+
+	public DivisionResult divides(Integer dividend, Integer divisor) throws ImpossibleCalculationException {
+
+		if (divisor != 0) {
+			double result = Math.ceil((double) dividend / (double) divisor);
+			result = Math.ceil(result);
+
+			DivisionResult divisionResult = new DivisionResult(dividend, divisor, (int) result);
+
+			resultList.add(divisionResult);
+
+			return divisionResult;
 		}
 
-			else 
-	    
-		
-				throw new ImpossibleCalculationException();
+		else {
+			DivisionResult divisionResult = new DivisionResult(dividend, divisor, null);
 
+			resultList.add(divisionResult);
+
+			throw new ImpossibleCalculationException();
 
 		}
 
 	}
+
+
+
+	public static List<DivisionResult> getResultList() {
+		return resultList;
+	}
+
+
+
+	public static void setResultList(List<DivisionResult> resultList) {
+		divider.resultList = resultList;
+	}
+	
+	
+	public static void clearResultList() {
+		resultList.clear();
+	}
+
+}
 
 
 /*
