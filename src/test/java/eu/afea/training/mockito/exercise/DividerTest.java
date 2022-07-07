@@ -36,9 +36,9 @@ public class DividerTest {
 		}
 	
 	@Test
-	public void DivisionZero() throws ImpossibleCalculatorException {
-		Integer dividend = 3;
-		Integer divisor = 2;
+	public void divisionzero() throws ImpossibleCalculatorException {
+		Integer dividend = 10;
+		Integer divisor = 0;
 	 try {
 		 DivisionResult result = divider.dividers(dividend, divisor);
 		 fail("Should throw ImpossibileCalculatorException");
@@ -50,10 +50,23 @@ public class DividerTest {
 	
 	@Test(expected = ImpossibleCalculatorException.class)
 	public void DivisionZero2() throws ImpossibleCalculatorException {
+		Integer dividend = 10;
+		Integer divisor = 0;
+		DivisionResult result = divider.dividers(dividend, divisor);
+	}
+	
+
+	
+	@Test
+	public void DivisionTre_due2() throws ImpossibleCalculatorException {
 		Integer dividend = 3;
 		Integer divisor = 2;
 		DivisionResult result = divider.dividers(dividend, divisor);
+		assertEquals(Integer.valueOf(3), result.getResult());
+		assertEquals(Integer.valueOf(2), result.getDividend());
+		assertEquals(Integer.valueOf(2), result.getDivisor());
 	}
+	
 	
 	}
 

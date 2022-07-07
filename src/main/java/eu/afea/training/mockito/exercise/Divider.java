@@ -22,4 +22,14 @@ public class Divider {
 	}
 */
 	
+	
+	/*	public DivisionResult dividers(Integer dividend, Integer divisor) throws ImpossibleCalculatorException{
+		try {
+			return new DivisionResult(dividend, divisor, dividend/divisor);
+		}catch (ArithmeticException e)
+		{
+		throw new ImpossibleCalculatorException();
+			}
+		
+	}*/
 }
