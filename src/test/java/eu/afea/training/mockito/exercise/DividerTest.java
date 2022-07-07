@@ -2,7 +2,9 @@ package eu.afea.training.mockito.exercise;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +12,21 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class DividerTest {
 	private Divider divider;
+	private Logger log;
 
 	@Before //serve per istanziare per ogni test così da farli ogni volta ciascuno e ripetere il procedimento
 	
 	public void setup() {
-		this.divider = new Divider();   //per istanziare e non ripetere per ogni testdIV
-		divider = new Divider();
+		 this.log = Mockito.mock(Logger.class);
+		//log = spy(new Logger(log));
+		//divider = spy(new Divider(log));
+		divider = new Divider(log);   //per istanziare e non ripetere per ogni testdIV
+		//divider = new Divider();
+		
 	}
 	@Test
 	public void testdIV() throws ImpossibleClalculationException
@@ -115,10 +123,10 @@ public class DividerTest {
 	@Test
 	public void Divisione_per_Zero5() throws ImpossibleClalculationException
 	{
-		divider = spy(new Divider());
-	
+		//divider = spy(new Divider());
+		
 		Integer div1 = 10;
-		Integer div2 = 2 ;
+		Integer div2 = 0;
 		//Integer ris = 5;
 		try {
 		DivisionResult ris = divider.Div(div1,div2);
@@ -126,7 +134,8 @@ public class DividerTest {
 		}
 		catch(ImpossibleClalculationException e)
 		{
-			
+			verify(log).log(anyString());
+			assertEquals(1, Divider.getListaDiv().size());
 			
 			
 		}

@@ -5,7 +5,13 @@ import java.util.List;
 
 public class Divider {
 	private static List<DivisionResult> ListaDiv = new ArrayList<>();
+	private Logger L ; 
 	
+	public Divider(Logger l) {
+		super();
+		this.L = l;
+	}
+
 	public Divider() {
 		// TODO Auto-generated constructor stub
 	}
@@ -35,7 +41,7 @@ public class Divider {
 			 DivisionResult divisionResult = new DivisionResult(div1, div2, null);
 	        ListaDiv.add(divisionResult);
 	        
-	        log("messaggio division of " + div1 + "by 0 ");
+	        L.log("messaggio division of " + div1 + "by 0 ");
 	        throw new ImpossibleClalculationException();
 	        
 	      
@@ -47,11 +53,6 @@ public class Divider {
 	{
 		return ListaDiv;
 	}
-	public void  log(String messaggio)
-	{
-			
-			 System.out.println(messaggio);
-		
-	}
+	
 
 }
