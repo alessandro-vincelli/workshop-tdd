@@ -34,6 +34,8 @@ public class Divider {
 			
 			 DivisionResult divisionResult = new DivisionResult(div1, div2, null);
 	        ListaDiv.add(divisionResult);
+	        
+	        log("messaggio division of " + div1 + "by 0 ");
 	        throw new ImpossibleClalculationException();
 	        
 	      
@@ -44,6 +46,12 @@ public class Divider {
 	public static List<DivisionResult> getListaDiv()
 	{
 		return ListaDiv;
+	}
+	public void  log(String messaggio)
+	{
+			
+			 System.out.println(messaggio);
+		
 	}
 
 }
