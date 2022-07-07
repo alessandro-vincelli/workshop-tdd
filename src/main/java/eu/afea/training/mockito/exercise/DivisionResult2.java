@@ -46,6 +46,8 @@ public DivisionResult2(Integer dividendo, Integer divisore, Integer risultato) {
 	this.divisore = divisore;
 	this.risultato = risultato;
 }
+
+
 }
 
 

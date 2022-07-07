@@ -106,26 +106,6 @@ public class DividerTest2 {
 
 
 
-	
-	
-	
-	// 13 es. 3
-	@Test
-	public void test3diviso2() throws ImpossibleCalculationException {  // il throw servirà solo per l esercizio 2, SOLO dopo aver fatto il ".11" della classe Divider2
-		Integer dividendo = 3;// assegno il valore alle mie variabili
-		Integer divisore = 2;
-
-
-		DivisionResult2 risultato = divider2.Divides(dividendo, divisore); // e con questo svolgoo il test desiderato 
-
-
-		assertEquals(Integer.valueOf(2), risultato.getRisultato()); //  il risultato lo so gia, quindi verifico che sia esatto 
-		assertEquals(Integer.valueOf(3), risultato.getDividendo()); //  allo stesso modo, verifico che i valori dei parametri che ho utilizzato siano quelli voluti
-		assertEquals(Integer.valueOf(2), risultato.getDivisore()); 
-
-		// in questo caso, tutto è corretto e il test funziona 
-
-	}
 
 
 

@@ -9,11 +9,15 @@ public class Divider2 {
 	{                                                                        // SENZA generare il try-catch, quindi scrivendo solo il "RETURN"
 
 		try {
-			return  new DivisionResult2(dividendo, divisore, dividendo / divisore);
+			return  new DivisionResult2(dividendo, divisore, dividendo / divisore );
 		}
 		catch (Exception e)
 		{
 			throw new ImpossibleCalculationException();  //  11.  creo, tramite "throw new" la mia eccezione personalizzata, ovviamente usando il throws per far capire che l ho denominata
 		}
 	}
-}
+
+
+	}
+
+
