@@ -58,8 +58,8 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(2), result.getResult());
 		assertEquals(Integer.valueOf(3), result.getDividend());
 		assertEquals(Integer.valueOf(2), result.getDivisor());
-	
-		
+		assertEquals(1, divider.getList().size());
+		assertEquals(Integer.valueOf(2), Divider.getList().get(0).getResult());
 	}
 	
 }

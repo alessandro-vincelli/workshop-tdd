@@ -11,8 +11,9 @@ public class DivisionResult {
 		this.dividend = dividend;
 		this.divisor = divisor;
 		this.result = result;
+		 
 	}
-
+ 
 	public Integer getDividend() {
 		return dividend;
 	}
