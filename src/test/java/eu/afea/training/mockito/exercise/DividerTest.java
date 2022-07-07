@@ -49,5 +49,17 @@ public class DividerTest {
 	DivisionResult result = divider.divides(dividend, divisor);
 
 }
+	@Test
+	public void testDividesNew() throws ImpossibleCalculationException {
+		Integer dividend = 3;
+		Integer divisor = 2;
 
+		DivisionResult result = divider.divides(dividend, divisor);
+		assertEquals(Integer.valueOf(2), result.getResult());
+		assertEquals(Integer.valueOf(3), result.getDividend());
+		assertEquals(Integer.valueOf(2), result.getDivisor());
+	
+		
+	}
+	
 }
