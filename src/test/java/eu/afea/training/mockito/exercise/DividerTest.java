@@ -12,6 +12,7 @@ public class DividerTest {
 	@Before
 	public void setUp() {
 		divider = new Divider();
+		Divider.getList().clear();	
 	}
 	
 	@Test
@@ -24,6 +25,7 @@ public class DividerTest {
 		assertEquals(2, d.getResult());
 		assertEquals(n1, d.getDiv1());
 		assertEquals(n2, d.getDiv2());
+		assertEquals(1, Divider.getList().size());
 	}
 	
 	
@@ -37,6 +39,7 @@ public class DividerTest {
 		assertEquals(d.getResult(), n1/n2);
 		assertEquals(d.getDiv1(), n1);
 		assertEquals(d.getDiv2(), n2);
+		assertEquals(1, Divider.getList().size());
 	}
 	
 	@Test
@@ -51,6 +54,7 @@ public class DividerTest {
 			assertEquals(d.getResult(), n1/n2);
 			assertEquals(d.getDiv1(), n1);
 			assertEquals(d.getDiv2(), n2);
+			assertEquals(1, Divider.getList().size());
 			fail("Should throw ImpossibleCalculationException");
 		} catch (ImpossibleCalculationException e) {
 			//e.printStackTrace();
@@ -64,8 +68,11 @@ public class DividerTest {
 		n2 = 0;
 		
 		Division_result d1 =  divider.divides(n1, n2);
+		assertEquals(1, Divider.getList().size());
 	}
 	
 	@After
-	public void cleanUp() {}
+	public void cleanUp() {
+		Divider.getList().clear();
+	}
 }

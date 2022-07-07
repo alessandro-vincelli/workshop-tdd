@@ -2,19 +2,17 @@ package eu.afea.training.mockito.exercise;
 
 public class Division_result {
 	
-	
 	//Properties
-	private int div1, div2, result;
+	private Integer div1, div2, result;
 	
 	//Constructor
 	public Division_result() {
 	}
 	
-	public Division_result(int d1, int d2){
+	public Division_result(Integer d1, Integer d2){
 		super();
 		div1 = d1;
 		div2 = d2;
-		result = d1/d2;
 	}
 
 	//Setter & Getter
@@ -22,7 +20,7 @@ public class Division_result {
 		return div1;
 	}
 
-	public void setDiv1(int div1) {
+	public void setDiv1(Integer div1) {
 		this.div1 = div1;
 	}
 
@@ -30,7 +28,7 @@ public class Division_result {
 		return div2;
 	}
 
-	public void setDiv2(int div2) {
+	public void setDiv2(Integer div2) {
 		this.div2 = div2;
 	}
 
@@ -38,7 +36,7 @@ public class Division_result {
 		return result;
 	}
 
-	public void setResult(int result) {
+	public void setResult(Integer result) {
 		this.result = result;
 	}
 	
