@@ -1,10 +1,19 @@
 package eu.afea.training.mockito.exercise;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.Spy;
+import static org.mockito.Mockito.spy;
+import static org.mockito.ArgumentMatchers.anyString;
+
 
 
 public class DividerTest3 {
@@ -18,8 +27,8 @@ public class DividerTest3 {
 
 	@Before 
 	public void setupTest() { 
-		divider3 = new Divider3(); 
-	}
+		divider3 = spy(  new Divider3());  // mockito es.2  .4 . adesso,fatto questo, devo solo aggiungere il verify
+	}                                      // SENZA LI MOCK  SPY sarebbe:   divider3 = new Divider3();
 
 
 
@@ -72,12 +81,13 @@ public class DividerTest3 {
 			Integer dividendo = 5;
 			Integer divisore = 0;
 
-			DivisionResult2 risultato = divider3.Divides(dividendo, divisore); 
+			DivisionResult2 risultato = divider3.Divides(dividendo, divisore);
 			fail("ImpossibleCalculationException");
 		}
 		catch (Exception e)
 		{
-		}	
+			verify(divider3).log(anyString());      // mockito es.2  .5   se non legge anyString, importalo staticamente)
+		}	                                  // per verificarlo, commento il metodo log nell else della classe Divider3
 	}
 
 
@@ -117,6 +127,12 @@ public class DividerTest3 {
 		//  9. aggiungo il controllo della mia lista
 		assertEquals(1, divider3.getLista().size());
 		assertEquals(Integer.valueOf(2), divider3.getLista().get(0).getRisultato());
+
+		
+		
+List lista2_Mock = spy (new ArrayList()); // mockito es.2  .3
+
+
 
 
 
