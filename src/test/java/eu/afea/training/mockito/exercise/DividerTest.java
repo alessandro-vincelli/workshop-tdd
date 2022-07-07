@@ -74,7 +74,7 @@ public class DividerTest {
 	}
 		
 	@Test
-	public void testDivision2() throws ImpossibleCalculationException {
+	public void testDivision_RoundUp() throws ImpossibleCalculationException {
 
 		Integer dividend = 3;
 		Integer divisor = 2;
