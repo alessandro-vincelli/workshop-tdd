@@ -2,6 +2,10 @@ package eu.afea.training.mockito.exercise;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.spy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -106,10 +110,29 @@ public class DividerTest {
 			
 			
 		}
+	}
+	
+	@Test
+	public void Divisione_per_Zero5() throws ImpossibleClalculationException
+	{
+		divider = spy(new Divider());
+	
+		Integer div1 = 10;
+		Integer div2 = 2 ;
+		//Integer ris = 5;
+		try {
+		DivisionResult ris = divider.Div(div1,div2);
+		fail();
+		}
+		catch(ImpossibleClalculationException e)
+		{
+			
+			
+			
+		}
+}
 	
 }
-}
-	 
 		
 	
 	
