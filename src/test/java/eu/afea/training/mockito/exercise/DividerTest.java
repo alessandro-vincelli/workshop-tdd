@@ -2,6 +2,9 @@ package eu.afea.training.mockito.exercise;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -37,24 +40,32 @@ public class DividerTest {
 		assertEquals(Integer.valueOf(10), result.getDividend());
 		assertEquals(Integer.valueOf(0), result.getDivisor());
 		
+		
 
 	}
 
 	@Test
 	public void testdivision_By_zero2() throws ImpossibleCalcultationException {
 		
-		try {
-	
 		Integer dividend = 10;
 		Integer divisor = 0;
+		divides = spy (divides);
+		
+		try {
+	
+		
 		DivisionResult result = divides.Div(dividend, divisor);
-	    fail("Should throw ImpossibleCalcultationException");
+	    
+		fail("Should throw ImpossibleCalcultationException");
+		
+	    
+		
 		
 		
 		
 		}
-	catch (ImpossibleCalcultationException e) {
-		
+	   catch (ImpossibleCalcultationException e) {
+		verify(divides).Log(anyString());
 	}
 
 	}

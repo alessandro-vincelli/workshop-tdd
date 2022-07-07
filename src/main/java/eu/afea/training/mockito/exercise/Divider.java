@@ -6,6 +6,14 @@ import java.util.List;
 public class Divider {
 	
 	private static List<DivisionResult> resultList = new ArrayList<>();
+	
+	public void Log (String message) {
+		
+		System.out.println(message);
+		
+		
+		
+	}
 
 	public DivisionResult Div(Integer dividend, Integer divisor) throws ImpossibleCalcultationException {
 
@@ -28,7 +36,7 @@ public class Divider {
 		else
 
 		{
-			
+			Log("Division of " + dividend + "by zero");
 			
 			DivisionResult divisionResult = new DivisionResult(dividend, divisor, null);
 			throw new ImpossibleCalcultationException();
