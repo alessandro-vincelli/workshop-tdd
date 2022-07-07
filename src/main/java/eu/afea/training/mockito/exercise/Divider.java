@@ -9,15 +9,23 @@ public class Divider {
 	public  DivisionResult Div(Integer div1, Integer div2) throws ImpossibleClalculationException {
 		// TODO Auto-generated method stub
 		//DivisionResult D = new DivisionResult();
-		try {
+		if(div2 !=0)
+			
+		 {
 	        
 	        System.out.println("Try Block -->  Start");
-	       
+	       //return Division(div1, div2, div1/div2)  iniziale prima della modifica 
 	        
-	        return new DivisionResult(div1, div2, div1/div2);
+	       double ris = (double) div1 / (double) div2;
+	         
+	       ris =  Math.ceil(ris);
+	        
+	        DivisionResult divisionResult = new DivisionResult(div1, div2, (int) ris);
+	        
+	        return divisionResult;
 	        
 	     }
-	     catch (Exception e) { 
+		else { 
 	        throw new ImpossibleClalculationException();
 	    
 	     }
