@@ -37,8 +37,8 @@ public class DividerTest {
 	
 	@Test
 	public void DivisionZero() throws ImpossibleCalculatorException {
-		Integer dividend = 10;
-		Integer divisor = 0;
+		Integer dividend = 3;
+		Integer divisor = 2;
 	 try {
 		 DivisionResult result = divider.dividers(dividend, divisor);
 		 fail("Should throw ImpossibileCalculatorException");
@@ -50,8 +50,8 @@ public class DividerTest {
 	
 	@Test(expected = ImpossibleCalculatorException.class)
 	public void DivisionZero2() throws ImpossibleCalculatorException {
-		Integer dividend = 10;
-		Integer divisor = 0;
+		Integer dividend = 3;
+		Integer divisor = 2;
 		DivisionResult result = divider.dividers(dividend, divisor);
 	}
 	
