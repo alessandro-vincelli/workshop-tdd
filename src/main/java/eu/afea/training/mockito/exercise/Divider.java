@@ -2,18 +2,23 @@ package eu.afea.training.mockito.exercise;
 
 import java.util.*;
 
-public class divider {
+public class Divider {
 
 	private static List<DivisionResult> resultList = new ArrayList<>();
-	
-	
 
-	public divider() {
+	private Logger logger;
+	
+	
+	
+	public Divider(Logger logger) {
 		super();
-		
+		this.logger = logger;
 	}
 
+	public Divider() {
+		super();
 
+	}
 
 	public DivisionResult divides(Integer dividend, Integer divisor) throws ImpossibleCalculationException {
 
@@ -33,6 +38,8 @@ public class divider {
 
 			resultList.add(divisionResult);
 
+			logger.log("Division of" + dividend + "by zero");
+
 			throw new ImpossibleCalculationException();
 
 		}
@@ -48,7 +55,7 @@ public class divider {
 
 
 	public static void setResultList(List<DivisionResult> resultList) {
-		divider.resultList = resultList;
+		Divider.resultList = resultList;
 	}
 	
 	
@@ -56,7 +63,43 @@ public class divider {
 		resultList.clear();
 	}
 
+
+
+
+
+
 }
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//modo alternativo da vedere
+
 
 
 /*

@@ -1,19 +1,25 @@
 package eu.afea.training.mockito.exercise;
 
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class DividerTest {
 
-	private divider divider;
+	private Divider divider;
+	private Logger log;
 
 	@Before
 	public void setupTest() {
-		divider = new divider();
+		log = Mockito.mock(Logger.class);
+		divider = new Divider(log);
 	}
 
 	@After
@@ -51,17 +57,27 @@ public class DividerTest {
 
 	@Test
 	public void testDivision_ByZero2() throws ImpossibleCalculationException {
+		Integer dividend = 10;
+		Integer divisor = 0;
+		//Divider dividerSpy = spy(divider);
 		try {
-			Integer dividend = 10;
-			Integer divisor = 0;
-
+			
+			
 			DivisionResult result = divider.divides(dividend, divisor);
-			fail();
-			assertEquals(Integer.valueOf(5), result.getResult());
+			
+
+			assertEquals(Integer.valueOf(null), result.getResult());
 			assertEquals(Integer.valueOf(dividend), result.getDividend());
 			assertEquals(Integer.valueOf(divisor), result.getDivisor());
 			fail("Should throw IllegalArgumentException");
+			
+			
 		} catch (ImpossibleCalculationException e) {
+			
+			assertEquals(1,divider.getResultList().size());
+			
+			verify(log).log(anyString());
+
 			
 		}
 		
