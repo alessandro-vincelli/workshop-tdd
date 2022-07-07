@@ -9,21 +9,22 @@ import static org.junit.Assert.assertEquals;
 import eu.afea.training.mockito.services.DivisionResult;
 
 public class Divider {
-	
-	
-	
-	public DivisionResult divides (Integer dividend, Integer divisor) throws ImpossibleCalculationException {
+	        
+	      public DivisionResult divides (Integer dividend, Integer divisor) throws ImpossibleCalculationException {
 		try {	
-			return new DivisionResult (dividend, divisor, dividend/divisor);
+			double result = (double) dividend/ (double) divisor;
+			 result = Math.ceil(result);
+			 DivisionResult DivisionResult = new DivisionResult(dividend,divisor, (int) result);
+			    
+			 return DivisionResult;
 		} catch (ArithmeticException ArithmeticException) {
 			throw new ImpossibleCalculationException ();
 		}
-		
-		 
+				
 	}
 	
-	
-}
+	}
+
 
 
 	

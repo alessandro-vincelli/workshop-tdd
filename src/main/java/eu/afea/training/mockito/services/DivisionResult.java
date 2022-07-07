@@ -16,7 +16,9 @@ public class DivisionResult {
 		super();
 		this.dividend = dividend;
 		this.divisor = divisor;
-		this.result = result;
+		this.result = result;	
+		
+		
 	}
 
 	public void setDividend(Integer dividend) {

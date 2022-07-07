@@ -72,15 +72,16 @@ public class DividerTest {
 	}
 
 	@Test
-	public void testDividesbug() throws ImpossibleCalculationException {
+	public void testDivides_3div2() throws ImpossibleCalculationException {
 		Integer dividend = 3;
 		Integer divisor = 2;
 		DivisionResult result = divider.divides(dividend, divisor);
 		assertEquals(Integer.valueOf(2), result.getResult());
 		assertEquals(Integer.valueOf(3), result.getDividend());
 		assertEquals(Integer.valueOf(2), result.getDivisor());
-
+		
 	}
-}
+	}
+
 
 
